@@ -1,0 +1,12 @@
+version: '2'
+services:
+    odetta-app:
+        image: odetta
+        environment:
+            - SPRING_PROFILES_ACTIVE=prod,swagger
+            - SPRING_DATA_MONGODB_URI=mongodb://odetta-mongodb:27017
+            - SPRING_DATA_MONGODB_DATABASE=odetta
+    odetta-mongodb:
+        extends:
+            file: mongodb.yml
+            service: odetta-mongodb
