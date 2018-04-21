@@ -1,0 +1,13 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "HealthRecord",
+    "description": "A health record schema for Mongo in Odetta",
+    "type" : "object",
+    "properties": {
+        "id" :{
+            "bsonType" : "objectId",
+            "description": "Mongo id for collection",
+        }
+    }
+
+}
