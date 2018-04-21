@@ -1,0 +1,17 @@
+{
+    "created" : "Date",
+    "mealtime" : "Date",
+    "instakeDuration" : 123,
+    "conponents" : [
+        {
+            "foodItemName" : "potato-fried",
+            "foodItem" : "ObjectId to meal types!!",
+            "weight":  240
+        },
+        {
+            "foodItemName" : "chicken",
+            "foodItem" : "ObjectId",
+            "weight" : 170
+        }
+    ]
+}

@@ -1,0 +1,45 @@
+{
+    "id" : 123,
+    "created" : "Date",
+    "workoutDuration" : 1324,
+    "type" : [
+        {
+            "name" : "string",
+            "orderIndex" : 1234,
+            "stronglyAffectedMuscles" :  [
+                {
+                    "name" : "string",
+                    "isBig" : false
+                },
+                {   "name" : "string",
+                    "isBig" : true
+                }
+            ],
+            "slightlyAffectedMuscles" :  [
+                {
+                    "name" : "string",
+                    "usBig" : true
+                },
+                {   "name" : "string",
+                    "isBig" : false
+                }
+            ]
+        }
+    ],
+    "sets" : [
+        {
+            "orderIndex" : 1,
+            "repeats" : 8,
+            "partiaRepeats" : 0,
+            "weight" : 85,
+            "isToKillMusles" : false
+        },
+        {
+            "orderIndex" : 2,
+            "repeats" : 12,
+            "partiaRepeats" : 6,
+            "weight" : 40,
+            "isToKillMusles" : true
+        }
+    ]
+}
