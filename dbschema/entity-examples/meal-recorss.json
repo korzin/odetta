@@ -2,7 +2,7 @@
     "created" : "Date",
     "mealtime" : "Date",
     "instakeDuration" : 123,
-    "conponents" : [
+    "components" : [
         {
             "foodItemName" : "potato-fried",
             "foodItem" : "ObjectId to meal types!!",

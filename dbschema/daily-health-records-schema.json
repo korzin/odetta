@@ -1,0 +1,52 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "HealthRecord",
+    "description": "A health record schema for Mongo in Odetta, recorded in tranquillity",
+    "type" : "object",
+    "required" : ["created", "group"],
+    "properties": {
+        "created" :{
+            "bsonType" : "date",
+            "description": "Datetime when record was created"
+        },
+        "pulse" : {
+            "type" : "integer",
+            "minimum": 30,
+            "maximum": 220,
+            "description": "Recorded pulse at least during 1m(Mesurement during at least for a 30 seconds)"
+        },
+        "sysPressure" : {
+            "type" : "integer",
+            "minimum": 70,
+            "maximum": 260,
+            "description": "Systolic pressure. Allowable error = +- 5 mm Hg"
+        },
+        "diaPressure" : {
+            "type" : "integer",
+            "minimum": 30,
+            "maximum": 150,
+            "description": "Diastolic pressure. Allowable error = +- 5 mm Hg"
+        },
+        "weight" : {
+            "type" : "integer",
+            "minimum": 60000,
+            "maximum": 120000,
+            "description" : "Mesured weight in gramms."
+        },
+        "sleepDuration" : {
+            "type" : "integer",
+            "maximum": 72,
+            "description": "Measured sleep duration with ordinary clock or using electronic wristwatch"
+        },
+        "deepSleepDuration" : {
+            "type" : "integer",
+            "maximum": 72,
+            "description": "Measured deep sleep duration only using wristwatch"
+        },
+        "measureTimeGroup" : {
+            "type" : "string",
+            "description": "Measurement can be fone at morning or, for instans, adter endurance training. Enum can't be used for validation because items of it can be changed quite frequently"
+        } 
+    }
+
+}

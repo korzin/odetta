@@ -1,0 +1,20 @@
+{
+    "name" : "cake",
+    "groups":[
+        "lotOfSugar", "sugar", "expensive","lips"
+    ],
+    "nutrients" : [
+        {
+            "name" : "sugar",
+            "percentage" : 30
+        },
+        {
+            "name" : "carbohydrates",
+            "percentage" : 34
+        },
+        {
+            "name" : "fats",
+            "percentage" : 35
+        }
+    ]
+}

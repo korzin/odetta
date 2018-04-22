@@ -1,0 +1,39 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "MealRecord",
+    "description": "Meal records with relation to calories collection.",
+    "type" : "object",
+    "required" : ["created", "mealTime", "components"],
+    "properties": {
+        "created" : {
+            "bsonType" : "date",
+            "description": "Moment when meal record was created"
+        },
+        "mealTime": {
+            "bsonType" : "date",
+            "description": "Moment of last food intake"
+        },
+        "intakeDuration" : {
+            "type" : "integer",
+            "description" : "How long was a meal"   
+        },
+        "components" : {
+            "type" : "array",
+            "maxItems" : 10,
+            "minItems" : 1,
+            "items": {
+                "title": "MealComponent",
+                "type" : "object",
+                "description": "Component like potato, juice, chicken, etc",
+                "properties": {
+                    "name" : { "type" : "string"},
+                    "objId" : {"bsonType" : "objectId"},
+                    "weight" : {
+                        "type" : "integer",
+                        "description": "Measurementы are taken in grams."
+                    }
+                }   
+            }
+        }
+    }
+}

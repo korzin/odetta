@@ -1,0 +1,51 @@
+{
+    "$schema": "http://json-schema.org/draft-04/schema",
+    "title": "HealthRecord",
+    "description": "A weightlifting record schema for Mongo in Odetta",
+    "type" : "object",
+    "required" : ["created", "type", "sets"],
+    "properties": {
+        "created" :{
+            "bsonType" : "date",
+            "description": "Datetime when record was created"
+        },
+        "workoutDuration" : {"type" : "integer"},
+        "type" : {
+            "title": "WorkoutType",
+            "description": "What muscles are effected. Specific kind",
+            "type" : "object",
+            "properties": {
+                "name" : { "type" : "string"},
+                "orderIndex" : { "type" : "integer", "description" : "Additional property to provide order on app level"},
+                "affectedMuscle" : {
+                    "type" : "array",
+                    "minItems" : 1,
+                    "required" : ["name"],
+                    "items": {
+                        "title" : "AffectedMuscle",
+                        "properties": {
+                            "name" : { "type" : "string"},
+                            "isBig" : { "type" : "boolean"},
+                            "isSlightlyAffected": {"type" : "boolean"}
+                        }
+                    }
+                }
+                
+            }   
+        },
+        "sets" : {
+            "type" : "array",
+            "description" : "Contain description of sets processed during workout",
+            "items" : {
+                "title" : "LiftingSet",
+                "properties" : {
+                    "orderIndex" : {"type" : "integer"},
+                    "repeats" : {"type" : "integer"},
+                    "partialRepeats" : {"type" : "integer"},
+                    "weight" : {"type" : "integer"},
+                    "isToKillMuscle" : {"type" : "boolean"}
+                }
+            }
+        }
+    }
+}
