@@ -1,38 +1,67 @@
-app:
-  internals:
-    async:
-      corePoolSize: 2
-      maxPoolSize: 50
-      queueCapacity:  10000
-    swagger:
-      title: "Odetta Domains microservice API"
-      description: "Odetta Domains microservice OpenAPI description"
-      version: "0.0.1"
-      termsOfServiceUrl : null
-      contactName : null
-      contactUrl : null
-      contactEmail : null
-      license : null
-      licenseUrl : null
-      defaultIncludePattern : null
-      host : null
-      protocols:
-        - http
-  metrix:
-    jmx:
-      ebabled: false
-    grafite:
-      enabled: false
-      host: localhost
-      port: 2003
-      prefix: "unknown ?"
-    prometheus:
-      endpoint: /prometheusMetrics
-    logs:
-      enabled: false
-      reportFrequency: 60
-  security:
-    jwt:
-      tokenValidity: 1800
-      remeberMeValidity: 2592000
+spring:
 
+  jackson:
+      serialization:
+        WRITE_DATES_AS_TIMESTAMPS: false
+
+  data:
+      mongodb:
+          host: localhost:27017
+          username: odetta-dev
+          password: odetta-dev
+          database: liferecords
+          authentication-database: admin
+
+springfox:
+  documentaion:
+    swagger:
+      v2:
+        path: /open-api
+
+
+
+
+
+
+
+
+
+
+#app:
+#  internals:
+#    async:
+#      corePoolSize: 2
+#      maxPoolSize: 50
+#      queueCapacity:  10000
+#    swagger:
+#      title: "Odetta Domains microservice API"
+#      description: "Odetta Domains microservice OpenAPI description"
+#      version: "0.0.1"
+#      termsOfServiceUrl : null
+#      contactName : null
+#      contactUrl : null
+#      contactEmail : null
+#      license : null
+#      licenseUrl : null
+#      defaultIncludePattern : null
+#      host : null
+#      protocols:
+#        - http
+#  metrix:
+#    jmx:
+#      ebabled: false
+#    grafite:
+#      enabled: false
+#      host: localhost
+#      port: 2003
+#      prefix: "unknown ?"
+#    prometheus:
+#      endpoint: /prometheusMetrics
+#    logs:
+#      enabled: false
+#      reportFrequency: 60
+#  security:
+#    jwt:
+#      tokenValidity: 1800
+#      remeberMeValidity: 2592000
+#
